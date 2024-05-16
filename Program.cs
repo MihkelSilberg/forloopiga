@@ -4,9 +4,18 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Maja raisk");
+            Console.WriteLine("maja v diamond");
 
-            Maja();
+           string valik = Console.ReadLine();
+            switch (valik)
+            {
+                case "1":
+                    Maja();
+                    break;
+                case "2":
+                    Diamond();
+                    break;
+            }
         }
         static void Maja()
         {
@@ -49,6 +58,42 @@
                     }
                     Console.WriteLine();
                 }
+            }
+        }
+        static void Diamond()
+        {
+            int i, j, r; 
+
+            Console.Write("\n\n"); 
+            Console.Write("teemant:\n");  
+            Console.Write("-----------------------------------");  
+            Console.Write("\n\n"); 
+
+            Console.Write("Mitu rida tahad? (pool diamondi): ");  
+            r = Convert.ToInt32(Console.ReadLine());  
+
+            
+            for (i = 0; i <= r; i++)
+            {
+                for (j = 1; j <= r - i; j++)
+                    Console.Write(" ");  
+
+                for (j = 1; j <= 2 * i - 1; j++)
+                    Console.Write("*");  
+
+                Console.Write("\n");  
+            }
+
+  
+            for (i = r - 1; i >= 1; i--)
+            {
+                for (j = 1; j <= r - i; j++)
+                    Console.Write(" ");
+
+                for (j = 1; j <= 2 * i - 1; j++)
+                    Console.Write("*");  
+
+                Console.Write("\n"); 
             }
         }
     }
